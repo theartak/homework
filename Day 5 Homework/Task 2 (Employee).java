@@ -10,7 +10,7 @@ public class Employee {
     char gender;
 
     Employee(String id, String name, String department, int age, char gender){
-        this.id = name;
+        this.id = id;
         this.name = name;
         this.department = department;
         this.age = age;
