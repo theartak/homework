@@ -7,16 +7,22 @@ public class Person {
     int age;
     String address;
 
-    public Person(){}
+    public Person(){
+        super();
+    }
 
     public Person(String name, int age, String address){
         this.name = name;
         this.age = age;
         this.address = address;
-        personInfo(name, age, address);
     }
 
-    public static void personInfo(String name, int age, String address){
-        System.out.println("Name: " + name + ", Age: " + age + ", Address: " + address);
+    public void personInfo(){
+        System.out.printf(
+                "Name: %s, Age: %d, Address: %s \n",
+                this.name,
+                this.age,
+                this.address
+        );
     }
 }

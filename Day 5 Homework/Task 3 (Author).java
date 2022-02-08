@@ -3,16 +3,21 @@ package com.company.day5;
 /* Day 5, Task 3 */
 
 public class Author {
-    String name, email, gender;
+    String name, email;
+    char gender;
 
-    Author(String name, String email, String gender){
+    Author(String name, String email, char gender){
         this.name = name;
         this.email = email;
         this.gender = gender;
-        authorInfo(name, email, gender);
     }
 
-    public static void authorInfo(String name, String email, String gender){
-        System.out.println("Name: " + name + ", Email: " + email + ", Gender" + gender);
+    public void authorInfo(){
+        System.out.printf(
+                "Name: %s, Email: %s, Gender: %s \n",
+                this.name,
+                this.email,
+                this.gender
+        );
     }
 }

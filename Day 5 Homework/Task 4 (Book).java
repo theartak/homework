@@ -10,15 +10,22 @@ public class Book {
         this.name = name;
         this.author = author;
         this.price = price;
-        bookPrice(name, author, price);
-        bookAuthor(name, author);
     }
 
-    public static void bookPrice(String name, String author, double price){
-        System.out.println("Name: " + "'" + name + "'" + ", Author: " + author + ", Price: " + price);
+    public void bookPrice(){
+        System.out.printf(
+                "Name: %s, Author: %s, Price: %f \n",
+                this.name,
+                this.author,
+                this.price
+        );
     }
 
-    public static void bookAuthor(String name, String author){
-        System.out.println("Name: " + "'" + name + "'" + ", Author: " + author);
+    public void bookAuthor(){
+        System.out.printf(
+                "Name: %s, Author: %s \n",
+                this.name,
+                this.author
+        );
     }
 }
