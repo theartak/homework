@@ -9,6 +9,10 @@ public class Employee {
     int age;
     char gender;
 
+    Employee(){
+        super();
+    }
+
     Employee(String id, String name, String department, int age, char gender){
         this.id = id;
         this.name = name;

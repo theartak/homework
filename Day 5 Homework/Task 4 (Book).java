@@ -6,6 +6,10 @@ public class Book {
     String name, author;
     double price;
 
+    public Book(){
+        super();
+    }
+
     public Book(String name, String author, double price){
         this.name = name;
         this.author = author;
