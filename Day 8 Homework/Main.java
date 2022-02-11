@@ -293,14 +293,19 @@ public class Main {
 
     public static void Task11() {
         Scanner sc = new Scanner(System.in);
-        String ans1 = "Coordinates are in the same plane";
-        String ans2 = "Coordinates are in different planes";
-        int a = sc.nextInt(), b = sc.nextInt(), c = sc.nextInt(), d = sc.nextInt();
-        if (a > 0 && b > 0 && c > 0 && d > 0) {
-            System.out.println(ans1);
-        } else if (a < 0 && b < 0 && c < 0 && d < 0) {
-            System.out.println(ans1);
-        } else System.out.println(ans2);
+        int x1 = sc.nextInt();                      //The x coordinate for the first point
+        int x2 = sc.nextInt();                      //The x coordinate for the second point
+        int y1 = sc.nextInt();                      //The y coordinate for the first point
+        int y2 = sc.nextInt();                      //The y coordinate for the second point
+        if (x1 > 0 && x2 > 0 && y1 > 0 && y2 > 0) {
+            System.out.println("The points are in the same quarter");
+        } else if (x1 > 0 && x2 > 0 && y1 < 0 && y2 < 0) {
+            System.out.println("The points are in the same quarter");
+        } else if (x1 < 0 && x2 < 0 && y1 > 0 && y2 > 0) {
+            System.out.println("The points are in the same quarter");
+        } else if (x1 < 0 && x2 < 0 && y1 < 0 && y2 < 0) {
+            System.out.println("The points are in the same quarter");
+        } else System.out.println("The points are not in the same quarter");
     }
 
     /**
