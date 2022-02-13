@@ -20,15 +20,11 @@ public class Day9Task9 {
         String ansr = "Correct choice, congratulations!";
         String answer = "Select a valid option";
         switch (a) {
-            case 'a':
-                System.out.println(answ);
-                break;
             case 'b':
                 System.out.println(ansr);
                 break;
+            case 'a':
             case 'c':
-                System.out.println(answ);
-                break;
             case 'd':
                 System.out.println(answ);
                 break;

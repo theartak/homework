@@ -1,4 +1,5 @@
 package com.company;
+
 import java.util.Scanner;
 
 public class Day9Task12 {
@@ -16,10 +17,10 @@ public class Day9Task12 {
     /**
      * A simple calculator that accepts two numbers and returns addition, subtraction,
      * multiplication, or division chosen by the user.
-     * */
+     */
 
-    public static void calculator(int a, int b, char c){
-        switch (c){
+    public static void calculator(int a, int b, char c) {
+        switch (c) {
             case '+':
                 System.out.println(a + b);
                 break;
@@ -30,6 +31,10 @@ public class Day9Task12 {
                 System.out.println(a * b);
                 break;
             case '/':
+                if (b == 0){
+                    System.out.println("You can't divide by 0");
+                    break;
+                }
                 System.out.println(a / b);
                 break;
             default:

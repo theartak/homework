@@ -7,12 +7,12 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         //String str1 = sc.next();
         //String str2 = sc.next();
-        int a = sc.nextInt();
+        //int a = sc.nextInt();
         //int b = sc.nextInt();
         //int c = sc.nextInt();
-        //char z = sc.next().charAt(0);
+        char z = sc.next().charAt(0);
         //String str = null;
-        System.out.println(isPowOf2(a));
+        isVowel(z);
     }
 
     /**
@@ -45,14 +45,9 @@ public class Main {
      * "zero" if the value is 0.
      */
 
-    public static void isNumPos(int i) {
-        if (i > 0) {
-            System.out.println("Positive");
-        } else if (i < 0) {
-            System.out.println("Negative");
-        } else {
-            System.out.println("Zero");
-        }
+    public static String isNumPos(int i) {
+        String res = (i > 0) ? "Positive" : (i < 0) ? "Negative" : "Zero";
+        return res;
     }
 
     /**
@@ -97,13 +92,26 @@ public class Main {
      */
 
     public static void isVowel(char c) {
-        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'
-                || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
-            System.out.println(c + " is a vowel");
-        } else if (c == 'y' || c == 'Y') {
-            System.out.println(c + " is sometimes a vowel");
-        } else {
-            System.out.println(c + " is a consonant");
+        switch (c){
+            case 'a':
+            case 'A':
+            case 'e':
+            case 'E':
+            case 'i':
+            case 'I':
+            case 'o':
+            case 'O':
+            case 'u':
+            case 'U':
+                System.out.println(c + " is a vowel");
+                break;
+            case 'y':
+            case 'Y':
+                System.out.println(c + " is sometimes a vowel");
+                break;
+            default:
+                System.out.println(c + " is not a vowel");
+                break;
         }
     }
 
@@ -115,32 +123,14 @@ public class Main {
     public static void input0To9(int a) {
         switch (a) {
             case 9:
-                System.out.println(a);
-                break;
             case 8:
-                System.out.println(a);
-                break;
             case 7:
-                System.out.println(a);
-                break;
             case 6:
-                System.out.println(a);
-                break;
             case 5:
-                System.out.println(a);
-                break;
             case 4:
-                System.out.println(a);
-                break;
             case 3:
-                System.out.println(a);
-                break;
             case 2:
-                System.out.println(a);
-                break;
             case 1:
-                System.out.println(a);
-                break;
             case 0:
                 System.out.println(a);
                 break;
