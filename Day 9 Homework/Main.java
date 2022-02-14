@@ -7,12 +7,12 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         //String str1 = sc.next();
         //String str2 = sc.next();
-        //int a = sc.nextInt();
-        //int b = sc.nextInt();
-        //int c = sc.nextInt();
-        char z = sc.next().charAt(0);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+        //char z = sc.next().charAt(0);
         //String str = null;
-        isVowel(z);
+        System.out.println(checkMax(a, b, c));
     }
 
     /**
@@ -83,7 +83,7 @@ public class Main {
      */
 
     public static int checkMax(int a, int b, int c) {
-        int max = ((a > b) && (a > c)) ? a : ((b > a) && (b > c)) ? b : c;
+        int max = ((a >= b) && (a >= c)) ? a : ((b >= a) && (b >= c)) ? b : c;
         return max;
     }
 
