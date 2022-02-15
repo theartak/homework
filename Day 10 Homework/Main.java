@@ -1,17 +1,21 @@
 package com.company;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
+
     static Scanner sc = new Scanner(System.in);
+    static Random rand = new Random();
+
     public static void main(String[] args) {
         //int k = sc.nextInt();
         //double x = sc.nextDouble();
         //double y = sc.nextDouble();
-        int x = sc.nextInt();
+        //int x = sc.nextInt();
         //int p = sc.nextInt();
         //int y = sc.nextInt();
-        returnSumOfDigits(x);
+        guessTheNumber();
     }
 
     /***
@@ -46,9 +50,9 @@ public class Main {
 
     public static void printSquares(int a) {
         int i = 1;
-        while ((i * i) < a) {
+        while (i * i <= a) {
             System.out.println(i * i);
-            ++i;
+            i++;
         }
     }
 
@@ -57,15 +61,15 @@ public class Main {
      * A method that prints the smallest divisor of a given integer input from the console.
      */
 
-    public static void smallestDivisor(int a) {
+    public static int smallestDivisor(int a) {
         int i = 2;
         while (i <= a) {
             if (a % i == 0) {
-                System.out.println(i);
-                break;
+                return i;
             }
             i++;
         }
+        return a;
     }
 
     /**
@@ -74,12 +78,10 @@ public class Main {
      */
 
     public static void printPowersOf2(int a) {
-        int i = 2;
+        int i = 1;
         while (i < a) {
-            if (i > 1) {
-                System.out.println(i);
-                i *= 2;
-            }
+            System.out.println(i);
+            i *= 2;
         }
     }
 
@@ -89,13 +91,9 @@ public class Main {
      */
 
     public static void printDescendingIntegers(int a) {
-        int i = a;
-        while (i <= a) {
-            if (i > 1) {
-                System.out.println(--i);
-            } else if (i == 1) {
-                break;
-            }
+        int i = a - 1;
+        while (i > 0) {
+            System.out.println(i--);
         }
     }
 
@@ -106,12 +104,12 @@ public class Main {
 
     public static void printMultOf2Descending(int a) {
         int i = a;
-        while (i <= a) {
-            if (i > 2 && i % 2 == 0) {
-                System.out.println(i = i - 2);
-            } else if (i == 2) {
-                break;
-            }
+        if (i % 2 != 0) {
+            i -= 1;
+        }
+        while (i >= 2) {
+            System.out.println(i);
+            i -= 2;
         }
     }
 
@@ -140,7 +138,7 @@ public class Main {
      * so that Math.pow(2,k) ≥ N.
      */
 
-    public static void smallestInteger(int k) {
+    public static int smallestInteger(int k) {
         int n = 0;
         int integer = 1;
         while (true) {
@@ -150,7 +148,7 @@ public class Main {
             integer *= 2;
             n++;
         }
-        System.out.println(n);
+        return k;
     }
 
     /**
@@ -159,9 +157,9 @@ public class Main {
      */
 
     public static void printASCIIChars() {
-        int i = 31;
+        int i = 32;
         while (i < 122) {
-            ++i;
+            i++;
             System.out.print((char) i);
             if (i % 10 == 2) {
                 System.out.print("\n");
@@ -175,11 +173,13 @@ public class Main {
      */
 
     public static void printIntExcMultOf3(int a) {
-        int i = a;
-        while (i > 0) {
-            --i;
+        int i = 1;
+        while (i < a) {
+            i++;
             if (i % 3 == 0) {
                 continue;
+            } else if (i == a) {
+                break;
             }
             System.out.println(i);
         }
@@ -233,10 +233,83 @@ public class Main {
     public static int checkDeposit(int x, int p, int y) {
         int years = 0;
         while (x < y) {
-            x += x * 0.1;
+            x += x * p / 100;
             years++;
         }
         return years;
+    }
+
+    /**
+     * Task 15
+     * A sequence consists of different natural numbers and ends with the number 0.
+     * This is a method that determines the second largest element in the sequence.
+     */
+
+    public static void secondLargestInt() {
+        int max = Integer.MIN_VALUE;
+        int min = 0;
+        int num;
+        while (true) {
+            num = sc.nextInt();
+            if (num == 0) {
+                break;
+            }
+            if (num > max) {
+                min = max;
+                max = num;
+            } else if (num > min && num != max) {
+                min = num;
+            }
+        }
+        System.out.println(min);
+    }
+
+    /**
+     * Task 15
+     * A sequence consists of different natural numbers and ends with the number 0.
+     * This is a method that determines the second largest element in the sequence.
+     * (Do-while)
+     */
+
+    public static void secondLargestIntDoWhile() {
+        int max = Integer.MIN_VALUE;
+        int min = 0;
+        int num;
+        do {
+            num = sc.nextInt();
+            if (num > max) {
+                min = max;
+                max = num;
+            } else if (num > min && num != max) {
+                min = num;
+            }
+        } while (num != 0);
+        System.out.println(min);
+    }
+
+//
+
+    /**
+     * Task 16
+     * A method that generates a random number, lets the user input their number and tells
+     * if the input is higher than the random number, or lower, and congratulates the user
+     * if they guessed it correctly.
+     */
+
+    public static void guessTheNumber() {
+        int random = rand.nextInt(10) + 1;
+        System.out.println(random);
+        int a = sc.nextInt();
+        while (true) {
+            if (a > random) {
+                System.out.println("Your number is higher than " + random + ", try again");
+                break;
+            } else if (a < random) {
+                System.out.println("Your number is lower than " + random + ", try again");
+                break;
+            } else System.out.println("You guessed the number, congratulations!");
+            break;
+        }
     }
 
     /**
